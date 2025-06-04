@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Survey Results</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Survey Responses</h1>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>IP Address</th>
+                <th>User Agent</th>
+                <th>Timestamp</th>
+                <th>Care About Me</th>
+                <th>Care Reason</th>
+                <th>Best Friend</th>
+                <th>Love Me</th>
+                <th>Love Reason</th>
+                <th>Stay Together</th>
+                <th>Marry Reason</th>
+                <th>Choose Me</th>
+                <th>Improve Self</th>
+                <th>Improve Reason</th>
+                <th>Friendship Continue</th>
+                <th>Last Words</th>
+            </tr>
+            {% for response in responses %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ response.ip_address }}</td>
+                <td>{{ response.user_agent }}</td>
+                <td>{{ response.timestamp }}</td>
+                <td>{{ response.care_about_me }}</td>
+                <td>{{ response.care_reason }}</td>
+                <td>{{ response.best_friend }}</td>
+                <td>{{ response.love_me }}</td>
+                <td>{{ response.love_reason }}</td>
+                <td>{{ response.stay_together }}</td>
+                <td>{{ response.marry_reason }}</td>
+                <td>{{ response.choose_me }}</td>
+                <td>{{ response.improve_self }}</td>
+                <td>{{ response.improve_reason }}</td>
+                <td>{{ response.friendship_continue }}</td>
+                <td>{{ response.last_words }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
